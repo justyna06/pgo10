@@ -11,13 +11,17 @@ public class Kontenery {
         masaLadunku=0;
     }
 
+    class OverfillException extends Exception {
+        public OverfillException(String message) {
+            super(message);
+        }
+    }
     public void Zaladuj(int masaLadunku) throws OverfillException{
         this.masaLadunku = masaLadunku;
 
         if(masaLadunku > this.maksymalnaPojemnosc) {
             throw new OverfillException("Brak miejsca" + numerSeryjny);
-            this.maksymalnaPojemnosc = masaLadunku;
         }
-
     }
+
 }
